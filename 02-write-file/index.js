@@ -1,8 +1,9 @@
 const fs = require('node:fs');
+const path = require('path');
 const process = require('node:process');
 const readline = require('node:readline');
 
-const writeFile = fs.createWriteStream('text.txt', { flags: 'a' }, 'utf-8');
+const writeFile = fs.createWriteStream(path.join(__dirname, 'text.txt'), { flags: 'a' }, 'utf-8');
 const interface = readline.createInterface(process.stdin, process.stdout);
 
 console.log('Write the text');
